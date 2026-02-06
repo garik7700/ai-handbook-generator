@@ -1,0 +1,59 @@
+Suppose that you extract a paragraph
+(chunk) from a large text document such as a Harry Potter
+book. To what extent could one (as a human) understand
+that paragraph without having read the entirety of the
+novel? It is likely that a lack of understanding would be
+apparent, particularly with regard to terms that are unique
+to the context of the novels and the main plot of the story.
+Although this may be an extreme example due to the size
+and scope of the imaginary universe, which includes magic
+and ﬁctional characters, the principle of the BCE also
+applies to contextualized documents in business applica-
+tions. Therefore, the use of RAG with rich data still has
+limitations in terms of comprehensive understanding. In
+such cases, recent developments, including RAPTOR
+(Sarthi et al. 2024) and GraphRAG (Edge et al.
+
+---
+
+ upload documents ‘ ‘on the ﬂy’ ’ and to use this information in the
+generation process.
+Amri et al. ( 2024) and Khan et al. ( 2024)
+Context-
+speciﬁc
+answers
+RAG can be used to enhance the development of applications that require
+speciﬁc information. For example, AI-empowered programming assistants
+that are tailored to course-speciﬁc content can use additional data sources
+(such as course materials) to improve the accuracy of results and include a
+reference to the relevant material.
+Wei et al. ( 2024), Kazemitabaar et al. ( 2024), Rai
+et al. ( 2024) and Strobel and Banh ( 2024)
+Enhanced
+content
+generation
+RAG can be used to guide the content generation process by incorporating
+additional data. In this way, the quality and relevance of the content
+generated reﬂects current knowledge and trends relevant to the generation of
+content such as commentary.
+Wu et al. ( 2024) and Wang et al.
+
+---
+
+ more recent solutions
+can use whole documents rather than smaller text chunks.
+123
+M. Klesel, H. F. Wittmann: Retrieval-Augmented Generation (RAG), Bus Inf Syst Eng 67(4):551–561 (2025) 553
+Content courtesy of Springer Nature, terms of use apply. Rights reserved.
+query: [query].’ The [context] part can include links to the
+most relevant documents found in the vector database.
+Generator The generator takes the query augmented
+with information from the database and generates a new
+result. Again, the generation process can use the informa-
+tion of the context and provide the link to the original
+document (e.g., a hyperlink to a document).
+2.2 Enhanced RAG
+Figure 2 provides an overview of what can be considered a
+plain vanilla RAG architecture. In addition, recent litera-
+ture suggests several ways to improve the performance of a
+basic plain vanilla RAG architecture.

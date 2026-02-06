@@ -1,0 +1,81 @@
+# AI Handbook Generator – Write-up
+
+## Project Summary
+
+I built an AI-powered chat application that generates long-form
+handbooks (~20,000 words) from uploaded PDF documents.
+
+The system uses a custom Retrieval-Augmented Generation (RAG) pipeline.
+PDF files are split into chunks, embedded, and retrieved using cosine
+similarity. The most relevant chunks are injected into the AI prompt
+to ensure grounded answers.
+
+For handbook generation, the system first creates an outline and then
+iteratively expands each section, allowing generation of very long
+documents beyond single-context limits.
+
+---
+
+## AI Models Used
+
+The application uses a local large language model (LLM) served through
+Ollama. This allows the system to run fully offline without relying
+on external cloud APIs.
+
+The architecture is model-agnostic and can be adapted to use other
+models such as Grok, GPT, or Claude by replacing the LLM interface.
+
+---
+
+## Challenges
+
+The main challenges during development were:
+
+### 1. Handling large documents  
+PDF files can be very large, which leads to memory issues and long
+processing times. This required implementing chunking and limiting
+context size for stable performance.
+
+### 2. Long text generation  
+Generating a 20,000-word handbook exceeds the context window of most
+LLMs. This was solved by generating an outline first and then expanding
+each section iteratively.
+
+### 3. Performance and memory  
+Early versions consumed too much RAM due to large embedding arrays.
+This was improved by processing chunks in batches and limiting
+the number of retrieved contexts.
+
+### 4. External service instability  
+Cloud services and APIs were unreliable or unavailable during testing.
+To avoid this, a fully local setup using Ollama was chosen.
+
+These challenges led to a more robust and reproducible final system.
+
+---
+
+## Development Tools and AI Assistance
+
+During development, several AI tools were used as assistants:
+
+- Kilo Code and Antigravity were used for coding support and debugging.
+- ChatGPT and Grok were used for reasoning, explanations, and design
+  discussions.
+
+These tools were used as productivity aids. All final design decisions,
+integration, and testing were performed manually.
+
+(Even this text is mostly generated with the help of AI:)
+
+
+---
+
+## Outcome
+
+The final application allows users to:
+- Upload PDFs
+- Chat with AI about the content
+- Generate and export long handbooks
+
+The system runs fully offline using a local language model and meets
+the task requirement of generating long-form AI-powered documents.
